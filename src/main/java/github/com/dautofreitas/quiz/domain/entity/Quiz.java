@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity(name = "Quiz")
+@Entity
 public class Quiz {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

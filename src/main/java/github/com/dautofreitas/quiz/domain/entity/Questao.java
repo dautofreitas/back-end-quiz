@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-@Entity(name = "Questao")
+@Entity
 public class Questao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

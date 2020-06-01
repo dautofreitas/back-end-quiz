@@ -9,7 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Resposta")
 public class Resposta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
