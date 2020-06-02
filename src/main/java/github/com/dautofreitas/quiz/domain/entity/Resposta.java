@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
 public class Resposta {
@@ -23,6 +22,46 @@ public class Resposta {
 	private boolean correta;
 	
 	private boolean selecionada;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Questao getQuestao() {
+		return questao;
+	}
+
+	public void setQuestao(Questao questao) {
+		this.questao = questao;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public boolean isCorreta() {
+		return correta;
+	}
+
+	public void setCorreta(boolean correta) {
+		this.correta = correta;
+	}
+
+	public boolean isSelecionada() {
+		return selecionada;
+	}
+
+	public void setSelecionada(boolean selecionada) {
+		this.selecionada = selecionada;
+	}
 	
 	
 }
