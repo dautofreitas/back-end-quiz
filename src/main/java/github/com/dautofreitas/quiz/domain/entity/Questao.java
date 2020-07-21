@@ -12,7 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class Questao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,38 +23,8 @@ public class Questao {
 	@ManyToOne
 	@JoinColumn(name = "quiz_id")
 	private Quiz quiz;	
-	@OneToMany(mappedBy = "questao",fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "questao",fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
 	private List<Resposta> respostas;
 	private String pergunta;
-	private Integer quantidadeSelecaoResposta;
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public Quiz getQuiz() {
-		return quiz;
-	}
-	public void setQuiz(Quiz quiz) {
-		this.quiz = quiz;
-	}
-	public List<Resposta> getRespostas() {
-		return respostas;
-	}
-	public void setRespostas(List<Resposta> respostas) {
-		this.respostas = respostas;
-	}
-	public String getPergunta() {
-		return pergunta;
-	}
-	public void setPergunta(String pergunta) {
-		this.pergunta = pergunta;
-	}
-	public Integer getQuantidadeSelecaoResposta() {
-		return quantidadeSelecaoResposta;
-	}
-	public void setQuantidadeSelecaoResposta(Integer quantidadeSelecaoResposta) {
-		this.quantidadeSelecaoResposta = quantidadeSelecaoResposta;
-	}
+	private Integer quantidadeSelecaoResposta;	
 }

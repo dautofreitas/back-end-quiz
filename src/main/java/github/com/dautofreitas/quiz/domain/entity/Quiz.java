@@ -15,7 +15,7 @@ public class Quiz {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "quiz", fetch = FetchType.LAZY,cascade = CascadeType.MERGE)
 	private List<Questao> questoes;	
 	private String nome;
 	public Integer getId() {
